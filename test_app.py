@@ -65,7 +65,7 @@ def test_get_task_by_id(client):
     res = client.post('/tasks', json={"title": "Test"}, content_type='application/json')
     task_id = res.get_json()['id']
     response = client.get(f'/tasks/{task_id}')
-    assert response.status_code == 200
+    assert response.status_code == 999
     assert response.get_json()['title'] == "Test"
 
 
